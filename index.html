@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rasoi AyuShikha Ki</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" type="image/png" sizes="32x32" href="AyuShikha-logo-lines.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      /* ── Core palette ── */
+      --ink:        #251605;   /* deep espresso — primary dark */
+      --terracotta: #C57B57;   /* warm terracotta — primary accent */
+      --peach:      #F1AB86;   /* soft peach — secondary accent */
+      --sand:       #F7DBA7;   /* golden sand — highlight / gold */
+      --steel:      #9CAFB7;   /* muted steel blue — cool contrast */
+
+      /* ── Derived supporting colors ── */
+      --cream:      #FDF6EE;   /* warm off-white — page background */
+      --warm-white: #FFFAF4;   /* card background */
+      --parchment:  #F5E8D4;   /* ingredient panel, placeholders */
+      --bark:       #6B3A20;   /* mid-brown — secondary text links */
+      --muted:      #9A7560;   /* warm taupe — subdued text */
+      --border:     #EDD9C4;   /* light warm border */
+      --steel-light:#DDE8EB;   /* tinted steel for subtle highlights */
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background-color: var(--cream); color: var(--ink); min-height: 100vh; }
+
+    /* HEADER */
+    header { background-color: var(--ink); padding: 0 2rem; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 1rem; }
+    .site-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--cream); letter-spacing: 0.02em; cursor: pointer; text-decoration: none; flex-shrink: 0; }
+    .site-title span { color: var(--sand); font-style: italic; }
+    nav { display: flex; gap: 0.25rem; }
+    nav a { color: var(--parchment); text-decoration: none; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.4rem 0.85rem; border-radius: 2px; transition: background 0.2s, color 0.2s; white-space: nowrap; }
+    nav a:hover, nav a.active { background: var(--terracotta); color: #fff; }
+
+    /* SEARCH */
+    .search-wrap { position: relative; display: flex; align-items: center; margin-left: auto; }
+    .search-input { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 3px; color: var(--cream); font-family: 'DM Sans', sans-serif; font-size: 0.82rem; padding: 0.38rem 2.2rem 0.38rem 0.85rem; width: 190px; outline: none; transition: background 0.2s, border-color 0.2s, width 0.3s ease; }
+    .search-input::placeholder { color: rgba(253,246,238,0.4); }
+    .search-input:focus { background: rgba(255,255,255,0.13); border-color: var(--sand); width: 240px; }
+    .search-icon { position: absolute; right: 0.6rem; pointer-events: none; opacity: 0.45; color: var(--cream); }
+    .search-clear { position: absolute; right: 0.55rem; background: none; border: none; cursor: pointer; color: var(--cream); opacity: 0.5; display: none; padding: 0; line-height: 1; font-size: 1rem; }
+    .search-clear:hover { opacity: 1; }
+
+    /* HERO */
+    .hero { background: var(--ink); color: var(--cream); padding: 5rem 2rem 4rem; text-align: center; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 65% 0%, rgba(197,123,87,0.22) 0%, transparent 60%), radial-gradient(ellipse at 10% 100%, rgba(156,175,183,0.14) 0%, transparent 55%); pointer-events: none; }
+    .hero-eyebrow { font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sand); margin-bottom: 1.2rem; font-weight: 500; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.6rem, 6vw, 5rem); line-height: 1.1; font-weight: 400; margin-bottom: 1.2rem; }
+    .hero h1 em { font-style: italic; color: var(--peach); }
+    .hero p { font-family: 'Lora', serif; font-size: 1.05rem; color: #c9b8a8; max-width: 480px; margin: 0 auto; line-height: 1.7; }
+
+    /* LAYOUT */
+    .page-wrap { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* CATEGORY SECTIONS */
+    .category-section { display: none; animation: fadeIn 0.35s ease; }
+    .category-section.active { display: block; }
+    .section-header { display: flex; align-items: baseline; gap: 1.2rem; margin-bottom: 2.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+    .section-header h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 400; color: var(--ink); }
+    .section-header .count { font-size: 0.8rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
+
+    /* RECIPE GRID */
+    .recipe-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 2rem; }
+    .recipe-card { background: var(--warm-white); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; cursor: pointer; transition: transform 0.25s ease, box-shadow 0.25s ease; text-decoration: none; color: inherit; display: flex; flex-direction: column; }
+    .recipe-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(37,22,5,0.13); }
+    .card-photo { width: 100%; aspect-ratio: 4/3; background: var(--parchment); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; }
+    .card-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .card-photo.placeholder { min-height: 200px; flex-direction: column; gap: 0.5rem; }
+    .card-photo.placeholder svg { opacity: 0.35; }
+    .card-body { padding: 1.3rem 1.4rem 1.5rem; flex: 1; display: flex; flex-direction: column; }
+    .card-tag { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 0.5rem; }
+    .card-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 400; line-height: 1.3; margin-bottom: 0.6rem; color: var(--ink); }
+    .card-desc { font-family: 'Lora', serif; font-size: 0.88rem; color: var(--muted); line-height: 1.6; flex: 1; }
+    .card-meta { display: flex; gap: 1rem; margin-top: 1.1rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 0.78rem; color: var(--muted); }
+
+    /* RECIPE DETAIL */
+    #recipe-page { display: none; animation: fadeIn 0.3s ease; }
+    #recipe-page.active { display: block; }
+    .back-btn { display: inline-flex; align-items: center; gap: 0.45rem; color: var(--bark); font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; background: none; border: none; cursor: pointer; padding: 0; margin-bottom: 2.5rem; transition: color 0.2s; }
+    .back-btn:hover { color: var(--terracotta); }
+    .recipe-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; margin-bottom: 3.5rem; align-items: start; }
+    @media (max-width: 760px) { .recipe-hero { grid-template-columns: 1fr; gap: 2rem; } }
+    .recipe-photo-wrap { border-radius: 4px; overflow: hidden; aspect-ratio: 4/3; background: var(--parchment); display: flex; align-items: center; justify-content: center; }
+    .recipe-photo-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .recipe-photo-wrap.placeholder { flex-direction: column; gap: 0.7rem; color: var(--muted); font-size: 0.82rem; letter-spacing: 0.08em; }
+    .recipe-photo-wrap.placeholder svg { opacity: 0.3; }
+    .recipe-category-tag { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 0.6rem; }
+    .recipe-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; line-height: 1.15; margin-bottom: 1rem; color: var(--ink); }
+    .recipe-description { font-family: 'Lora', serif; font-size: 1rem; color: var(--muted); line-height: 1.75; margin-bottom: 1.8rem; }
+    .recipe-stats { display: flex; flex-wrap: wrap; border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
+    .stat { flex: 1; min-width: 90px; padding: 0.85rem 1rem; border-right: 1px solid var(--border); text-align: center; background: var(--steel-light); }
+    .stat:last-child { border-right: none; }
+    .stat-label { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.25rem; }
+    .stat-value { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--ink); }
+    .recipe-body { display: grid; grid-template-columns: 280px 1fr; gap: 4rem; align-items: start; }
+    @media (max-width: 760px) { .recipe-body { grid-template-columns: 1fr; gap: 2.5rem; } }
+    .ingredients-panel { background: var(--parchment); border-radius: 4px; padding: 1.8rem; }
+    @media (min-width: 761px) { .ingredients-panel { position: sticky; top: 80px; } }
+    .panel-title { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 400; margin-bottom: 1.2rem; padding-bottom: 0.8rem; border-bottom: 1px solid var(--border); color: var(--ink); }
+    .ingredient-list { list-style: none; }
+    .ingredient-list li { display: flex; justify-content: space-between; align-items: baseline; gap: 0.5rem; padding: 0.5rem 0; border-bottom: 1px solid rgba(37,22,5,0.07); font-size: 0.88rem; line-height: 1.4; }
+    .ingredient-list li:last-child { border-bottom: none; }
+    .ingredient-list .amount { color: var(--terracotta); font-weight: 500; white-space: nowrap; font-size: 0.82rem; }
+    .instructions-panel h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 400; margin-bottom: 1.5rem; padding-bottom: 0.8rem; border-bottom: 1px solid var(--border); }
+    .step { display: flex; gap: 1.4rem; margin-bottom: 1.8rem; align-items: flex-start; }
+    .step-number { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--peach); line-height: 1; flex-shrink: 0; width: 2rem; text-align: right; }
+    .step-text { font-family: 'Lora', serif; font-size: 0.95rem; line-height: 1.8; color: var(--ink); padding-top: 0.15rem; }
+    .recipe-notes { margin-top: 3rem; padding: 1.5rem 2rem; background: var(--steel-light); border-left: 3px solid var(--steel); border-radius: 0 4px 4px 0; }
+    .recipe-notes h4 { font-family: 'Playfair Display', serif; font-size: 1rem; font-style: italic; color: var(--bark); margin-bottom: 0.6rem; }
+    .recipe-notes p { font-family: 'Lora', serif; font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
+
+    /* HOME */
+    .cat-block { margin-bottom: 4rem; }
+    .cat-block .see-all { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--terracotta); cursor: pointer; background: none; border: none; font-family: inherit; font-weight: 500; padding: 0; margin-left: auto; transition: color 0.2s; }
+    .cat-block .see-all:hover { color: var(--bark); }
+
+    /* SEARCH RESULTS */
+    #search-section { display: none; animation: fadeIn 0.3s ease; }
+    #search-section.active { display: block; }
+    .search-results-header { display: flex; align-items: baseline; gap: 1.2rem; margin-bottom: 2.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+    .search-results-header h2 { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 400; }
+    .search-query-highlight { font-style: italic; color: var(--terracotta); }
+    .search-results-header .count { font-size: 0.8rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
+    .no-results { text-align: center; padding: 5rem 2rem; color: var(--muted); }
+    .no-results svg { opacity: 0.2; margin-bottom: 1.2rem; }
+    .no-results h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 400; margin-bottom: 0.5rem; color: var(--ink); }
+    .no-results p { font-family: 'Lora', serif; font-size: 0.9rem; }
+    mark { background: rgba(247,219,167,0.45); color: inherit; border-radius: 2px; padding: 0 1px; }
+
+    /* COMPONENT HEADINGS */
+    .component-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin: 1.2rem 0 0.4rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .component-heading:first-child { margin-top: 0; }
+
+    .component-section-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--terracotta);
+      margin: 2rem 0 1.2rem;
+      padding: 0.5rem 0 0.6rem;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* FOOTER */
+    footer { background: var(--ink); color: var(--muted); text-align: center; padding: 2rem; font-size: 0.78rem; letter-spacing: 0.06em; }
+    footer span { color: var(--peach); }
+  </style>
+</head>
+<body>
+
+<header>
+  <a class="site-title" onclick="showHome(); return false;" href="#">Rasoi <span>AyuShikha</span> Ki</a>
+
+  <div class="search-wrap">
+    <input class="search-input" id="search-input" type="text" placeholder="Search recipes…"
+      oninput="handleSearch(this.value)"
+      onkeydown="if(event.key==='Escape') clearSearch()"
+      autocomplete="off" />
+    <svg class="search-icon" id="search-icon" width="14" height="14" viewBox="0 0 14 14" fill="none">
+      <circle cx="5.5" cy="5.5" r="4" stroke="currentColor" stroke-width="1.4"/>
+      <path d="M9 9l3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+    </svg>
+    <button class="search-clear" id="search-clear" onclick="clearSearch()" title="Clear">&#x2715;</button>
+  </div>
+
+  <nav>
+    <a href="#" onclick="showHome(); return false;"                 id="nav-home"        class="active">All</a>
+    <a href="#" onclick="showCategory('breakfast'); return false;"  id="nav-breakfast"   >Breakfast</a>
+	<a href="#" onclick="showCategory('appetizers'); return false;" id="nav-appetizers"  >Appetizers</a>
+	<a href="#" onclick="showCategory('entrees'); return false;"    id="nav-entrees"     >Entrees</a>
+    <a href="#" onclick="showCategory('desserts'); return false;"   id="nav-desserts"    >Desserts</a>
+    <a href="#" onclick="showCategory('sauces'); return false;"     id="nav-sauces"      >Sauces</a>
+    <a href="#" onclick="showCategory('drinks'); return false;"     id="nav-drinks"      >Drinks</a>
+  </nav>
+</header>
+
+<div class="hero" id="hero-banner">
+  <div class="hero-eyebrow">A personal collection</div>
+  <h1>Food Made with<br><em>Love &amp; Care</em></h1>
+  <p>Tried-and-true recipes, passed down and perfected. Everything you need to cook beautifully.</p>
+</div>
+
+<main class="page-wrap">
+
+  <div id="search-section">
+    <div class="search-results-header">
+      <h2>Results for <span class="search-query-highlight" id="search-query-display"></span></h2>
+      <span class="count" id="search-count"></span>
+    </div>
+    <div class="recipe-grid" id="search-grid"></div>
+  </div>
+
+  <div id="recipe-page">
+    <button class="back-btn" onclick="closeRecipe()">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+        <path d="M9 2L4 7L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      Back
+    </button>
+    <div id="recipe-detail-content"></div>
+  </div>
+
+  <div id="home-section">
+    <div id="all-categories-container"></div>
+  </div>
+
+  <div id="category-sections">
+    <div class="category-section" id="section-breakfast">
+      <div class="section-header"><h2>Breakfast</h2><span class="count" id="count-breakfast"></span></div>
+      <div class="recipe-grid" id="grid-breakfast"></div>
+    </div>
+	<div class="category-section" id="section-appetizers">
+      <div class="section-header"><h2>Appetizers</h2><span class="count" id="count-appetizers"></span></div>
+      <div class="recipe-grid" id="grid-appetizers"></div>
+    </div>
+    <div class="category-section" id="section-entrees">
+      <div class="section-header"><h2>Entrees</h2><span class="count" id="count-entrees"></span></div>
+      <div class="recipe-grid" id="grid-entrees"></div>
+    </div>
+    <div class="category-section" id="section-desserts">
+      <div class="section-header"><h2>Desserts</h2><span class="count" id="count-desserts"></span></div>
+      <div class="recipe-grid" id="grid-desserts"></div>
+    </div>
+    <div class="category-section" id="section-sauces">
+      <div class="section-header"><h2>Sauces</h2><span class="count" id="count-sauces"></span></div>
+      <div class="recipe-grid" id="grid-sauces"></div>
+    </div>
+    <div class="category-section" id="section-drinks">
+      <div class="section-header"><h2>Drinks</h2><span class="count" id="count-drinks"></span></div>
+      <div class="recipe-grid" id="grid-drinks"></div>
+    </div>
+  </div>
+
+</main>
+
+<footer>Made with <span>&#9829;</span> &mdash; Rasoi AyuShikha Ki</footer>
+
+<!-- Load order: engine first, then index, then bootstrap -->
+<script src="js/app.js"></script>
+<script src="js/recipes-index.js"></script>
+<script>loadRecipes();</script>
+
+</body>
+</html>
