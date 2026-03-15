@@ -392,8 +392,10 @@ function init() {
       <div class="cat-block">
         <div class="section-header">
           <h2>${label}</h2>
-          <span class="count">${items.length} recipe${items.length !== 1 ? 's' : ''}</span>
-          <button class="see-all" onclick="showCategory('${cat}')">See all →</button>
+          <div class="header-meta">
+            <span class="count">${items.length} recipe${items.length !== 1 ? 's' : ''}</span>
+            <button class="see-all" onclick="showCategory('${cat}')">See all →</button>
+          </div>
         </div>
         <div class="recipe-grid">${items.slice(0, 3).map(renderCard).join('')}</div>
       </div>`;
