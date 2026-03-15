@@ -22,7 +22,7 @@ registerRecipe({
       ],
       steps: [
         "Drain the soaked chickpeas and add to a pressure cooker with the tea bag, bay leaves, cinnamon, black cardamoms, cloves, salt, and enough water to cover by 2 inches.",
-        "Pressure cook for 3–4 whistles until the chickpeas are completely soft but still hold their shape. Reserve the cooking liquid. Discard the tea bag, bay leaves, and whole spices.",
+        "Pressure cook for 1 whistle on high. Then reduce the gas to medium and let it cook for 30 minutes. Let the pressure release naturally. Reserve the cooking liquid. Discard the tea bag, bay leaves, and whole spices.",
       ],
     },
 
