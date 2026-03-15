@@ -1,0 +1,33 @@
+registerRecipe({
+  id:          "french-apple-cake",
+  category:    "desserts",
+  title:       "French Apple Cake",
+  description: "A luscious, buttery indulgence studded with tender apple chunks and kissed with hints of vanilla.",
+  photo:       "photos/french-apple-cake.png",           // e.g. "photos/french-apple-cake.jpg"
+  prepTime:    "20 min",
+  cookTime:    "40 min",
+  servings:    "8",
+  ingredients: [
+    { amount: "1 cup (125g)",       name: "all-purpose flour, sifted" },
+    { amount: "1 tsp",              name: "baking powder" },
+    { amount: "¼ tsp",              name: "salt" },
+    { amount: "½ cup (113g)",       name: "unsalted butter, softened" },
+    { amount: "⅔ cup (130g)",       name: "sugar" },
+    { amount: "2 large",            name: "eggs, room temperature" },
+    { amount: "1 tsp",              name: "vanilla extract" },
+    { amount: "2",                  name: "baking apples, peeled and chopped" },
+    { amount: "3 tbsp",             name: "dark rum (optional)" },
+  ],
+  steps: [
+    "Preheat oven to 350°F. Grease a 9-inch springform pan.",
+    "Sift the flour, baking powder, and salt together into a large bowl.",
+    "In a separate bowl, cream the butter and sugar until light and fluffy.",
+    "Add the eggs one at a time, beating well after each addition.",
+    "Mix in the vanilla extract and rum.",
+    "Add the flour mixture and stir until just combined — do not overmix.",
+    "Fold in the chopped apples.",
+    "Pour the batter into the prepared pan and spread to an even surface.",
+    "Bake for 35–40 minutes until a toothpick inserted in the center comes out clean. Allow to cool in the pan.",
+  ],
+  notes: "Can also be baked as muffins — this recipe makes 12 small muffins. Reduce baking time to about 20–22 minutes.",
+});

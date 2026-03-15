@@ -1,0 +1,31 @@
+registerRecipe({
+  id:          "tiramisu",
+  category:    "desserts",
+  title:       "Tiramisu",
+  description: "A classic Italian dessert offering a rich, creamy, and slightly bittersweet flavor — layers of coffee-soaked ladyfingers and mascarpone cream dusted with cocoa.",
+  photo:       "photos/tiramisu.png",           // e.g. "photos/tiramisu.jpg"
+  prepTime:    "30 min",
+  cookTime:    "0 min",
+  servings:    "8",
+  ingredients: [
+    { amount: "750g",    name: "mascarpone" },
+    { amount: "5 (250g)", name: "eggs" },
+    { amount: "250g",    name: "ladyfingers" },
+    { amount: "120g",    name: "sugar, divided into 60g + 60g" },
+    { amount: "300g",    name: "coffee, cooled (rum or sugar optional to taste)" },
+    { amount: "5 tbsp",  name: "cocoa powder, for topping" },
+  ],
+  steps: [
+    "Brew the coffee and allow it to cool completely. Do not soak ladyfingers in warm or hot coffee.",
+    "Separate the eggs into yolks and whites.",
+    "Whisk the egg yolks with 60g of sugar until pale and creamy.",
+    "Add the mascarpone to the yolk mixture one spoonful at a time, stirring until smooth after each addition.",
+    "In a separate clean bowl, whisk the egg whites with the remaining 60g of sugar until stiff, firm peaks form.",
+    "Gently fold the egg whites into the mascarpone cream using a large spoon, stirring from the bottom up to preserve the air.",
+    "Spread a thin layer of cream into the base of your dish.",
+    "Dip each ladyfinger into the cooled coffee for 2–3 seconds — no longer — and arrange in a single layer over the cream.",
+    "Spread a generous layer of cream over the ladyfingers. Repeat with another layer of soaked ladyfingers and finish with a final layer of cream.",
+    "Dust the top evenly with cocoa powder to cover. Refrigerate for at least 4 hours, or overnight.",
+  ],
+  notes: "The quick 2–3 second dip is important — over-soaked ladyfingers turn soggy. Chilling overnight gives the best set texture and deepest flavor.",
+});

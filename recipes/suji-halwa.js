@@ -1,0 +1,30 @@
+registerRecipe({
+  id:          "suji-halwa",
+  category:    "desserts",
+  title:       "Suji Halwa",
+  description: "A delicious combination of semolina, ghee, and sugar flavored with cardamom and saffron, studded with cashews.",
+  photo:       "photos/suji-halwa.png",           // e.g. "photos/suji-halwa.jpg"
+  prepTime:    "10 min",
+  cookTime:    "20 min",
+  servings:    "4",
+  ingredients: [
+    { amount: "¾ cup",       name: "suji (semolina)" },
+    { amount: "¾ cup",       name: "sugar (brown sugar gives a deeper color)" },
+    { amount: "2 cups",      name: "water, hot" },
+    { amount: "1 tbsp",      name: "besan" },
+    { amount: "1.5 tbsp",    name: "cardamom powder" },
+    { amount: "a fistful",   name: "dry fruits (cashews preferred)" },
+    { amount: "¼ cup",       name: "milk" },
+    { amount: "a few strands", name: "saffron" },
+    { amount: "as needed",   name: "ghee" },
+  ],
+  steps: [
+    "Warm the milk slightly and add the saffron strands. Let them steep for best aroma and color.",
+    "Add ghee to a pan over medium heat. Add the suji and besan together and roast, stirring constantly, until they turn light brown and release a nutty aroma.",
+    "Carefully add the hot water while continuously stirring to avoid lumps.",
+    "Add the sugar and dry fruits. Stir until the sugar is completely dissolved.",
+    "Pour in the saffron milk and cook for about 5 minutes, stirring, until the halwa thickens and comes together.",
+    "To serve, pack into a small bowl and invert onto a plate to present it in the shape of the bowl.",
+  ],
+  notes: "Keep stirring constantly once the water goes in — suji seizes up quickly. The ghee quantity is to taste; a generous hand makes it richer.",
+});

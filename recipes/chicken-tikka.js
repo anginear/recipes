@@ -1,0 +1,30 @@
+registerRecipe({
+  id:          "chicken-tikka",
+  category:    "appetizers",
+  title:       "Chicken Tikka",
+  description: "Tender chicken thigh cubes marinated in yogurt and aromatic masala, then shallow fried to golden perfection. Serve with coriander chutney.",
+  photo:       "photos/chicken-tikka.png",           // e.g. "photos/chicken-tikka.jpg"
+  prepTime:    "15 min",
+  cookTime:    "10 min",
+  servings:    "4",
+  ingredients: [
+    { amount: "1.5 lbs",  name: "chicken thigh, cut in 1 inch cubes" },
+    { amount: "¾ cup",    name: "yogurt, beaten" },
+    { amount: "1 tsp",    name: "turmeric powder" },
+    { amount: "1 tsp",    name: "red chilli powder" },
+    { amount: "2 tsp",    name: "coriander powder" },
+    { amount: "1.5 tbsp", name: "chicken masala (Everest)" },
+    { amount: "1 tbsp",   name: "garam masala" },
+    { amount: "to taste", name: "salt" },
+    { amount: "1 tbsp",   name: "avocado oil" },
+  ],
+  steps: [
+    "Beat the yogurt in a mixing bowl.",
+    "Add all of the masala. Taste and adjust masala and salt as needed.",
+    "Add the chicken to the bowl. Mix well, ensuring all chicken cubes are coated in the marinade.",
+    "Marinate for 2–12 hours.",
+    "Heat oil in a frying pan. Shallow fry the chicken about 2 minutes each side, until an internal temperature of 165°F is reached.",
+    "Serve with coriander chutney.",
+  ],
+  notes: "The longer the marinate time, the more flavorful and tender the chicken. Overnight is ideal.",
+});

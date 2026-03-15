@@ -1,0 +1,33 @@
+registerRecipe({
+  id:          "toonde-kebab",
+  category:    "appetizers",
+  title:       "Toonde Kebab",
+  description: "Juicy minced lamb patties spiced with garam masala, ginger, garlic, and cilantro, bound with egg and roasted besan, then shallow fried in a cast iron pan.",
+  photo:       "photos/toonde-kabab.png",           // e.g. "photos/toonde-kebab.jpg"
+  prepTime:    "20 min",
+  cookTime:    "15 min",
+  servings:    "10 kebabs",
+  ingredients: [
+    { amount: "1 lb",     name: "lamb, minced (can substitute goat)" },
+    { amount: "1",        name: "egg, beaten" },
+    { amount: "¼ cup",   name: "besan, roasted" },
+    { amount: "4 cloves", name: "garlic, grated" },
+    { amount: "2 inch",   name: "ginger, grated" },
+    { amount: "1 small",  name: "onion, grated" },
+    { amount: "1 tsp",    name: "dhania (coriander) powder" },
+    { amount: "2 tsp",    name: "red chilli powder" },
+    { amount: "2 tsp",    name: "garam masala" },
+    { amount: "1 tsp",    name: "turmeric" },
+    { amount: "to taste", name: "salt" },
+    { amount: "1 bunch",  name: "cilantro, chopped" },
+  ],
+  steps: [
+    "Beat the egg in a small bowl. Add half the masala, cilantro, garlic, and onion to the egg and mix.",
+    "Put the minced meat in a large bowl. Add the remaining half of the masala, cilantro, garlic, ginger, and onion. Mix well.",
+    "Pour the egg mixture into the meat bowl and mix until fully combined.",
+    "Add the roasted besan and mix well — it helps bind the patties and adds a nutty flavor.",
+    "Shape the mixture into small patties.",
+    "Heat oil in a cast iron pan over medium-high heat. Shallow fry the patties about 4 minutes per side, until an internal temperature of 165°F is reached and the outside is well browned.",
+  ],
+  notes: "Roasting the besan beforehand removes its raw taste — just dry-toast it in a pan over medium heat for 3–4 minutes until fragrant and lightly golden.",
+});
