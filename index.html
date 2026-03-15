@@ -31,6 +31,11 @@
 
     /* HEADER */
     header { background-color: var(--ink); padding: 0 2rem; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 1rem; }
+    @media (max-width: 600px) {
+      header { flex-direction: column; align-items: flex-start; height: auto; padding: 0.75rem 1rem 0; gap: 0; }
+      nav { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 0.6rem; scrollbar-width: none; }
+      nav::-webkit-scrollbar { display: none; }
+    }
     .site-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--cream); letter-spacing: 0.02em; cursor: pointer; text-decoration: none; flex-shrink: 0; }
     .site-title span { color: var(--sand); font-style: italic; }
     nav { display: flex; gap: 0.25rem; }
@@ -38,13 +43,15 @@
     nav a:hover, nav a.active { background: var(--terracotta); color: #fff; }
 
     /* SEARCH */
-    .search-wrap { position: relative; display: flex; align-items: center; margin-left: auto; }
-    .search-input { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 3px; color: var(--cream); font-family: 'DM Sans', sans-serif; font-size: 0.82rem; padding: 0.38rem 2.2rem 0.38rem 0.85rem; width: 190px; outline: none; transition: background 0.2s, border-color 0.2s, width 0.3s ease; }
+    .search-bar { background: var(--ink); padding: 0.75rem 2rem; display: flex; justify-content: center; }
+    .search-wrap { position: relative; display: flex; align-items: center; width: 100%; max-width: 480px; }
+    .search-input { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 3px; color: var(--cream); font-family: 'DM Sans', sans-serif; font-size: 0.9rem; padding: 0.5rem 2.4rem 0.5rem 1rem; width: 100%; outline: none; transition: background 0.2s, border-color 0.2s; }
     .search-input::placeholder { color: rgba(253,246,238,0.4); }
-    .search-input:focus { background: rgba(255,255,255,0.13); border-color: var(--sand); width: 240px; }
-    .search-icon { position: absolute; right: 0.6rem; pointer-events: none; opacity: 0.45; color: var(--cream); }
-    .search-clear { position: absolute; right: 0.55rem; background: none; border: none; cursor: pointer; color: var(--cream); opacity: 0.5; display: none; padding: 0; line-height: 1; font-size: 1rem; }
+    .search-input:focus { background: rgba(255,255,255,0.13); border-color: var(--sand); }
+    .search-icon { position: absolute; right: 0.7rem; pointer-events: none; opacity: 0.45; color: var(--cream); }
+    .search-clear { position: absolute; right: 0.6rem; background: none; border: none; cursor: pointer; color: var(--cream); opacity: 0.5; display: none; padding: 0; line-height: 1; font-size: 1rem; }
     .search-clear:hover { opacity: 1; }
+    @media (max-width: 600px) { .search-bar { padding: 0.65rem 1rem; } }
 
     /* HERO */
     .hero { background: var(--ink); color: var(--cream); padding: 5rem 2rem 4rem; text-align: center; position: relative; overflow: hidden; }
@@ -169,6 +176,18 @@
 <header>
   <a class="site-title" onclick="showHome(); return false;" href="#">Rasoi <span>AyuShikha</span> Ki</a>
 
+  <nav>
+    <a href="#" onclick="showHome(); return false;"                 id="nav-home"        class="active">All</a>
+    <a href="#" onclick="showCategory('breakfast'); return false;"  id="nav-breakfast"   >Breakfast</a>
+    <a href="#" onclick="showCategory('appetizers'); return false;" id="nav-appetizers"  >Appetizers</a>
+    <a href="#" onclick="showCategory('entrees'); return false;"    id="nav-entrees"     >Entrees</a>
+    <a href="#" onclick="showCategory('desserts'); return false;"   id="nav-desserts"    >Desserts</a>
+    <a href="#" onclick="showCategory('sauces'); return false;"     id="nav-sauces"      >Sauces</a>
+    <a href="#" onclick="showCategory('drinks'); return false;"     id="nav-drinks"      >Drinks</a>
+  </nav>
+</header>
+
+<div class="search-bar">
   <div class="search-wrap">
     <input class="search-input" id="search-input" type="text" placeholder="Search recipes…"
       oninput="handleSearch(this.value)"
@@ -180,17 +199,7 @@
     </svg>
     <button class="search-clear" id="search-clear" onclick="clearSearch()" title="Clear">&#x2715;</button>
   </div>
-
-  <nav>
-    <a href="#" onclick="showHome(); return false;"                 id="nav-home"        class="active">All</a>
-    <a href="#" onclick="showCategory('breakfast'); return false;"  id="nav-breakfast"   >Breakfast</a>
-	<a href="#" onclick="showCategory('appetizers'); return false;" id="nav-appetizers"  >Appetizers</a>
-	<a href="#" onclick="showCategory('entrees'); return false;"    id="nav-entrees"     >Entrees</a>
-    <a href="#" onclick="showCategory('desserts'); return false;"   id="nav-desserts"    >Desserts</a>
-    <a href="#" onclick="showCategory('sauces'); return false;"     id="nav-sauces"      >Sauces</a>
-    <a href="#" onclick="showCategory('drinks'); return false;"     id="nav-drinks"      >Drinks</a>
-  </nav>
-</header>
+</div>
 
 <div class="hero" id="hero-banner">
   <div class="hero-eyebrow">A personal collection</div>
