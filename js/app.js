@@ -390,12 +390,13 @@ function init() {
     const label = CATEGORY_LABELS[cat];
     return `
       <div class="cat-block">
-        <div class="section-header">
+        <div class="section-header-top">
           <h2>${label}</h2>
-          <div class="header-meta">
-            <span class="count">${items.length} recipe${items.length !== 1 ? 's' : ''}</span>
-            <button class="see-all" onclick="showCategory('${cat}')">See all →</button>
-          </div>
+          <span class="count-pill">${items.length} recipe${items.length !== 1 ? 's' : ''}</span>
+        </div>
+        <div class="section-header-bottom">
+          <span class="showing-label">Showing 3 of ${items.length}</span>
+          <button class="see-all" onclick="showCategory('${cat}')">See all →</button>
         </div>
         <div class="recipe-grid">${items.slice(0, 3).map(renderCard).join('')}</div>
       </div>`;
