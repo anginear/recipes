@@ -68,7 +68,7 @@
     /* CATEGORY SECTIONS */
     .category-section { display: none; animation: fadeIn 0.35s ease; }
     .category-section.active { display: block; }
-    .section-header { display: flex; align-items: flex-end; flex-wrap: wrap; gap: 0.4rem 1.2rem; margin-bottom: 2.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+    .section-header { display: flex; align-items: flex-end; gap: 1.2rem; margin-bottom: 2.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
     .section-header h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 400; color: var(--ink); flex-shrink: 0; }
     .section-header .count { font-size: 0.8rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; align-self: flex-end; }
 
@@ -124,8 +124,11 @@
 
     /* HOME */
     .cat-block { margin-bottom: 4rem; }
-    .header-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 0.15rem; margin-left: auto; align-self: flex-end; }
-    .header-meta .count { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
+    .section-header-top { display: flex; align-items: center; gap: 1rem; padding-bottom: 0.65rem; }
+    .section-header-top h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 400; color: var(--ink); line-height: 1; }
+    .count-pill { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.06em; background: var(--parchment); color: var(--muted); border: 1px solid var(--border); border-radius: 20px; padding: 3px 10px; white-space: nowrap; }
+    .section-header-bottom { display: flex; align-items: center; justify-content: space-between; padding-top: 0.6rem; border-top: 1px solid var(--border); margin-bottom: 2.5rem; }
+    .showing-label { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.06em; }
     .cat-block .see-all { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--terracotta); cursor: pointer; background: none; border: none; font-family: inherit; font-weight: 500; padding: 0; transition: color 0.2s; }
     .cat-block .see-all:hover { color: var(--bark); }
 
