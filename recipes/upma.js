@@ -19,12 +19,13 @@ registerRecipe({
     { amount: "10 leaves", name: "curry leaves" },
     { amount: "1 cup",     name: "sooji (semolina), roasted" },
     { amount: "1.5 cups",  name: "water, hot" },
-    { amount: "¾ cup",    name: "mixed vegetables (corn, peas, beans, carrots)" },
+    { amount: "¾ cup",     name: "mixed vegetables (corn, peas, beans, carrots)" },
     { amount: "1 tsp",     name: "red chilli powder" },
     { amount: "to taste",  name: "salt" },
   ],
   steps: [
-    "Dice the onions, ginger, and vegetables. If using frozen vegetables, soak them in hot water for 10 minutes then drain before cooking.",
+    "Roast the sooji on low to medium heat till it turns slightly brown and aromatic." 
+	"Dice the onions, ginger, and vegetables. If using frozen vegetables, soak them in hot water for 10 minutes then drain before cooking.",
     "Heat the oil in a kadhai over high heat. Add the mustard seeds and hing. When the seeds start spluttering, add the chana dal, urad dal, curry leaves, cashews, and ginger. Cook for 45 seconds on high flame.",
     "Reduce to medium heat and add the onions. Cook until translucent.",
     "Add the salt and red chilli powder and mix well.",
