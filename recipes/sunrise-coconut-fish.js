@@ -8,7 +8,7 @@ registerRecipe({
   cookTime:    "25 min",
   servings:    "4",
   ingredients: [
-    { amount: "2 lbs",     name: "sea bass, cut into 2\" pieces (halibut or barramundi also work)" },
+    { amount: "2 lbs",     name: "sea bass, cut into 2\" pieces (substitute with halibut or barramundi)" },
     { amount: "1 can",     name: "coconut milk" },
     { amount: "2 tbsp",    name: "avocado oil" },
     { amount: "10–12",     name: "curry leaves" },
