@@ -12,7 +12,7 @@ registerRecipe({
     {
       name: "Chickpeas",
       ingredients: [
-        { amount: "1.5 cups", name: "dried chickpeas (chhole), soaked overnight" },
+        { amount: "1.5 cups", name: "dried chickpeas (chole), soaked overnight" },
         { amount: "1",        name: "black tea bag" },
         { amount: "2",        name: "bay leaves" },
         { amount: "1 inch",   name: "cinnamon stick" },
