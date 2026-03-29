@@ -27,7 +27,7 @@ registerRecipe({
       ingredients: [
         { amount: "2 tbsp",  name: "coriander seeds" },
         { amount: "1 tsp",   name: "cumin seeds" },
-        { amount: "2 tsp",   name: "caraway seeds (shah jeera)" },
+        { amount: "2 tsp",   name: "caraway seeds (shah jeera or substitute with regular jeera)" },
         { amount: "2 tbsp",  name: "green cardamom" },
         { amount: "5–6",     name: "black cardamoms" },
         { amount: "3 inch",  name: "cinnamon" },
@@ -61,7 +61,6 @@ registerRecipe({
         { amount: "1.5 tbsp", name: "biryani masala (from above)" },
         { amount: "3–4 tbsp", name: "birista oil (reserved from frying)" },
         { amount: "200ml",    name: "yogurt (curd), beaten" },
-        { amount: "1 medium", name: "potato, cut into large pieces (optional)" },
         { amount: "small handful", name: "fresh mint, chopped" },
         { amount: "small handful", name: "fresh cilantro, chopped" },
         { amount: "2 tbsp",   name: "ghee" },
@@ -69,7 +68,7 @@ registerRecipe({
       steps: [
         "In a large bowl, combine the chicken with salt, lemon juice, ginger garlic paste, green chilli paste, Kashmiri chilli powder, turmeric, coriander powder, biryani masala, birista oil, and yogurt. Mix thoroughly to coat.",
         "Add the mint and cilantro. Mix well, cover, and marinate for at least 2 hours — overnight in the refrigerator gives the best results.",
-        "Transfer the marinated chicken (and potatoes if using) to a wide heavy-bottomed pot. Add the ghee and cook on medium-high heat for 5 minutes.",
+        "Transfer the marinated chicken to a wide heavy-bottomed pot. Add the ghee and cook on medium-high heat for 5 minutes.",
         "Reduce heat to medium, cover, and cook for 15–20 minutes until the chicken is about 80% cooked and the gravy has thickened. Some moisture should remain to steam the rice.",
       ],
     },
@@ -91,14 +90,14 @@ registerRecipe({
       ],
       steps: [
         "Bring a large pot of water to a rolling boil. Add the salt, lemon juice, and all the whole spices.",
-        "Drain the soaked rice and add to the boiling water. Cook for 6–7 minutes until the rice is exactly 70% done — it should be firm with a small white dot in the center when pressed between fingers. Drain immediately.",
+        "Drain the soaked rice and add to the boiling water. Cook for 6–7 minutes until the rice is 70% done — it should be firm with a small white dot in the center when pressed between fingers. Drain immediately.",
       ],
     },
 
     {
       name: "Layering & Dum Cooking",
       ingredients: [
-        { amount: "as needed", name: "saffron, soaked in warm milk" },
+        { amount: "5-10 strands", name: "saffron, soaked in 2 tbsp of warm milk" },
         { amount: "as needed", name: "water" },
         { amount: "3–4 tbsp", name: "ghee, warmed" },
         { amount: "a pinch",  name: "biryani masala" },
@@ -121,5 +120,5 @@ registerRecipe({
     },
 
   ],
-  notes: "Making your own biryani masala is what sets this apart — the homemade spice blend is far more aromatic than store-bought. The birista oil in the marinade is the other secret — don't skip it. Three things make or break the dum: rice parboiled to exactly 70%, enough moisture in the chicken layer, and an airtight seal. Serve with raita and saunth chutney.",
+  notes: "Making your own biryani masala is what sets this apart — the homemade spice blend is far more aromatic than store-bought. The birista oil in the marinade is the other secret — don't skip it. Three things make or break the dum: rice parboiled to exactly 70%, enough moisture in the chicken layer, and an airtight seal. Serve with raita.",
 });
