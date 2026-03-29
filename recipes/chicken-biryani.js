@@ -3,7 +3,7 @@ registerRecipe({
   category:    "entrees",
   title:       "Chicken Biryani",
   description: "A fragrant, celebratory layered rice dish with tender spiced chicken, homemade biryani masala, saffron-kissed basmati, and crispy caramelized onions. Slow-cooked on dum for that unmistakable aroma.",
-  photo:       "",           // e.g. "photos/chicken-biryani.jpg"
+  photo:       "photos/chicken-biryani.jpg",           // e.g. "photos/chicken-biryani.jpg"
   prepTime:    "35 min",
   cookTime:    "1 hr",
   servings:    "4",
