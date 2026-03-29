@@ -20,7 +20,7 @@ const RECIPE_FILES = [
   "recipes/tandoori-white-sauce-veggies.js",
   "recipes/chicken-masala.js",
   "recipes/spicy-creamy-chicken.js",
-  "recipes/punjabi-chhole-masala.js",
+  "recipes/punjabi-chhole.js",
   "recipes/aloo-methi.js",
   "recipes/chicken-biryani.js",
 
