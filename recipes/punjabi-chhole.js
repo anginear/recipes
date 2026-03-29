@@ -1,7 +1,7 @@
 registerRecipe({
-  id:          "punjabi-chhole-masala",
+  id:          "punjabi-chhole",
   category:    "entrees",
-  title:       "Punjabi Chhole Masala",
+  title:       "Punjabi Chhole",
   description: "A deeply spiced, tangy chickpea curry from the heart of Punjab. Dark, bold, and aromatic — cooked low and slow with whole spices, black tea, and a homemade masala paste until the chickpeas drink up every bit of flavor.",
   photo:       "photos/punjabi-chhole.png",           // e.g. "photos/punjabi-chhole-masala.jpg"
   prepTime:    "20 min",
