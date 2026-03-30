@@ -55,7 +55,7 @@ const RECIPE_FILES = [
   "recipes/vanilla-custard.js",
 
   // ── Drinks ───────────────────────────────────────────────
-  "recipes/boba-tea.js",
+  "recipes/masala-chai.js",
 
   // ── Breakfast ────────────────────────────────────────────
   "recipes/sweet-crepes.js",
