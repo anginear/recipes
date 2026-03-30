@@ -1,0 +1,31 @@
+registerRecipe({
+  id:          "masala-chai",
+  category:    "drinks",
+  title:       "Masala Chai",
+  description: "A warming, spiced milk tea brewed with whole cardamom, ginger, and cinnamon. Bold, fragrant, and deeply comforting, the kind that fills the whole kitchen with aroma.",
+  photo:       "",           // e.g. "photos/masala-chai.jpg"
+  prepTime:    "5 min",
+  cookTime:    "10 min",
+  servings:    "2",
+  ingredients: [
+    { amount: "1.5 cup",  name: "water" },
+    { amount: "0.5 cup",  name: "whole milk" },
+    { amount: "2 tsp",    name: "loose leaf black tea" },
+    { amount: "2 tsp",    name: "sugar, or to taste" },
+    { amount: "1 inch",   name: "ginger, roughly crushed or grated" },
+    { amount: "4",        name: "green cardamoms, lightly crushed" },
+    { amount: "1 inch",   name: "cinnamon stick" },
+    { amount: "4",        name: "black peppercorns, crushed" },
+    { amount: "2",        name: "cloves" },
+    { amount: "a pinch",  name: "nutmeg, grated (optional)" },
+  ],
+  steps: [
+    "Add the water, ginger, cardamom, cinnamon, peppercorns, and cloves to a small saucepan. Bring to a boil over medium-high heat.",
+    "Once boiling, reduce heat and simmer for 3–4 minutes to let the spices bloom and infuse the water.",
+    "Add the tea leaves and sugar. Stir and simmer for 1 minute.",
+    "Pour in the milk and increase heat to medium-high. Bring to a gentle boil, watching carefully — milk boils over quickly.",
+    "Once it rises, reduce heat and simmer for 2–3 minutes, stirring occasionally, until the chai is a deep caramel color and coats the spoon lightly.",
+    "Strain through a fine mesh strainer into cups. Finish with a pinch of grated nutmeg if desired. Serve immediately.",
+  ],
+  notes: "The key is letting the spices simmer in just water first before the milk goes in — this extracts far more flavor than adding everything at once. Strong, malty tea works best here; Assam or a robust breakfast blend holds up well against the spices. For a thicker, creamier chai, swap some of the water for extra milk. Adjust sugar before adding the milk so you can taste as you go.",
+});
