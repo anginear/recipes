@@ -23,6 +23,7 @@ const RECIPE_FILES = [
   "recipes/punjabi-chhole.js",
   "recipes/aloo-methi.js",
   "recipes/chicken-biryani.js",
+  "recipes/gajar-mattar.js",
 
   // ── Appetizers ───────────────────────────────────────────
   "recipes/bruschetta-classica.js",
