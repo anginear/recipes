@@ -24,7 +24,7 @@ registerRecipe({
     "Once boiling, reduce heat and simmer for 1-2 minutes to let the spices bloom and infuse the water.",
     "Add the tea leaves and sugar. Stir and simmer for 3-4 minutes.",
     "Pour in the milk and increase heat to medium-high. Bring to a gentle boil. Watch the milk carefully; milk boils over quickly.",
-    "Once it rises twice, turn the heat off, and it let rest for 5 minutes with the lid on.",
+    "Bring it to a boil. When the chai starts to rise, reduce the heat for 30 seconds. Bring it to a boil once more, then turn the heat off, and it let rest for 5 minutes with the lid on.",
     "Strain through a fine mesh strainer into cups. Serve immediately.",
   ],
   notes: "The key is letting the spices simmer in just water first before the milk goes in. This extracts far more flavor than adding everything at once. Strong, malty tea works best here; Assam or a Irish breakfast holds up well against the spices. For a thicker, creamier chai, swap some of the water for extra milk. Adjust sugar before adding the milk so you can taste as you go. You can which spices you add based on your taste.",
