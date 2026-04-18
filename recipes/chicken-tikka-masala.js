@@ -3,7 +3,7 @@ registerRecipe({
   category:    "entrees",
   title:       "Chicken Tikka Masala",
   description: "Smoky, charred chicken tikka brought together in a rich gravy made from two bases — a silky makhani puree and a deep onion tomato masala — finished with cream, butter, and kasuri methi.",
-  photo:       "",           // e.g. "photos/chicken-tikka-masala.jpg"
+  photo:       "chicken-tikka-masala.png",           // e.g. "photos/chicken-tikka-masala.jpg"
   prepTime:    "30 min",
   cookTime:    "40 min",
   servings:    "4",
