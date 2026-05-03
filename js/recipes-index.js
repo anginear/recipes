@@ -43,6 +43,7 @@ const RECIPE_FILES = [
   "recipes/coriander-chutney.js",
   "recipes/saunth.js",
   "recipes/teriyaki-sauce.js",
+  "recipes/yogurt-dipping-sauce.js",
 
   // ── Desserts ─────────────────────────────────────────────
   "recipes/chocolate-mug-cake.js",
