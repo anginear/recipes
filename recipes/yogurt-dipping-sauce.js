@@ -18,7 +18,7 @@ registerRecipe({
     { amount: "1 tbsp",  name: "water, plus more as needed" },
   ],
   steps: [
-    "In a medium bowl, stir together the yogurt, olive oil, lemon juice, garlic, and salt until smooth.",
+    "In a medium bowl, stir together the yogurt, olive oil, lemon juice, garlic, cilantro, mint, and salt until smooth.",
     "Stir in the water. If the sauce is too thick, add more water one tablespoon at a time until it reaches your desired consistency. Taste and adjust seasoning.",
   ],
   notes: "Stores well in an airtight container in the fridge for up to 5 days. For extra flavor, add a pinch of cumin or handful of other chopped fresh herbs like dill.",
