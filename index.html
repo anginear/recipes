@@ -171,6 +171,12 @@
       border-bottom: 1px solid var(--border);
     }
 
+    /* WAKE LOCK TOGGLE */
+    .recipe-header-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem; }
+    .wakelock-toggle { display: flex; align-items: center; gap: 0.5rem; background: var(--parchment); border: 1px solid var(--border); border-radius: 20px; padding: 0.35rem 0.85rem; font-size: 0.75rem; font-family: inherit; color: var(--muted); cursor: pointer; transition: all 0.2s; white-space: nowrap; }
+    .wakelock-toggle.active { background: var(--sand); border-color: var(--terracotta); color: var(--bark); }
+    .wakelock-toggle:hover { border-color: var(--terracotta); color: var(--bark); }
+	  
     /* FOOTER */
     footer { background: var(--ink); color: var(--muted); text-align: center; padding: 2rem; font-size: 0.78rem; letter-spacing: 0.06em; }
     footer span { color: var(--peach); }
