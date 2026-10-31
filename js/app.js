@@ -173,7 +173,16 @@ function renderRecipePage(recipe) {
     <div class="recipe-hero">
       ${photoHtml}
       <div class="recipe-intro">
-        <div class="recipe-category-tag">${label}</div>
+        <div class="recipe-header-top">
+          <div class="recipe-category-tag">${label}</div>
+          <button class="wakelock-toggle" id="wakelock-toggle" onclick="toggleWakeLock()" title="Keep screen on">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2a5 5 0 0 1 5 5v6H7V7a5 5 0 0 1 5-5z"/>
+              <rect x="5" y="13" width="14" height="9" rx="2"/>
+            </svg>
+            <span>Keep screen on</span>
+          </button>
+        </div>
         <h1 class="recipe-title">${recipe.title}</h1>
         <p class="recipe-description">${recipe.description}</p>
         <div class="recipe-stats">
@@ -196,6 +205,34 @@ function renderRecipePage(recipe) {
     </div>`;
 }
 
+// ── WAKE LOCK ──────────────────────────────────────────────
+
+let wakeLock = null;
+
+async function toggleWakeLock() {
+  if (wakeLock) {
+    releaseWakeLock();
+  } else {
+    try {
+      wakeLock = await navigator.wakeLock.request('screen');
+      document.getElementById('wakelock-toggle').classList.add('active');
+      wakeLock.addEventListener('release', () => {
+        wakeLock = null;
+        const btn = document.getElementById('wakelock-toggle');
+        if (btn) btn.classList.remove('active');
+      });
+    } catch (err) {
+      alert('Wake lock is not supported on this device or browser.');
+    }
+  }
+}
+
+function releaseWakeLock() {
+  if (wakeLock) { wakeLock.release(); wakeLock = null; }
+  const btn = document.getElementById('wakelock-toggle');
+  if (btn) btn.classList.remove('active');
+}
+
 // ── NAVIGATION ─────────────────────────────────────────────
 
 let currentCategory = null;
@@ -212,6 +249,7 @@ function hideAll() {
 }
 
 function showHome() {
+  releaseWakeLock();  
   hideAll();
   document.getElementById('home-section').style.display = 'block';
   document.getElementById('hero-banner').style.display  = 'block';
@@ -223,6 +261,7 @@ function showHome() {
 }
 
 function showCategory(cat) {
+  releaseWakeLock();
   hideAll();
   document.getElementById(`section-${cat}`).classList.add('active');
   document.getElementById(`nav-${cat}`).classList.add('active');
@@ -236,6 +275,7 @@ function showCategory(cat) {
 function openRecipe(id) {
   const recipe = RECIPES.find(r => r.id === id);
   if (!recipe) return;
+  releaseWakeLock();
   hideAll();
   document.getElementById('recipe-detail-content').innerHTML = renderRecipePage(recipe);
   document.getElementById('recipe-page').classList.add('active');
