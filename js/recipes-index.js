@@ -24,7 +24,6 @@ const RECIPE_FILES = [
   "recipes/aloo-methi.js",
   "recipes/chicken-biryani.js",
   "recipes/gajar-mattar.js",
-  "recipes/chicken-tikka-masala.js",
 
   // ── Appetizers ───────────────────────────────────────────
   "recipes/bruschetta-classica.js",
